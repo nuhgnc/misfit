@@ -944,3 +944,53 @@ ul.link_menu li a {
      position: absolute;
      right: calc(0% - 150px);
  }
+
+ #hareketEkle {
+     background-color: rgba(204, 204, 204, 0.8) ; 
+     border: solid 1px black;
+     display: block;
+     position: absolute;
+     padding: 20px;
+     right: 50px;
+ }
+
+
+ .admin-table {
+     float: right;
+     margin-top: 5px;
+     display: block;
+     border: 1px solid #000;
+     width: 80%;
+     background-color: rgba(237, 254, 151, 0.634);
+ }
+
+ .trainer_ekle_btn {
+     float: right;
+     margin-bottom: 6px;
+     width: max-content;
+     padding: 1px 3px;
+     height: 30px;
+     background-color: #23b523;
+     color: rgb(255, 255, 255);
+     border-radius: 20%;
+ }
+
+ .category_table {
+     background-color: rgba(104, 208, 215, 0.356);
+     margin-top: 5px;
+     display: block;
+     border-right: 1px solid #000;
+     width: 20%;
+ }
+
+ .kategori_ekle_btn {
+     float: right;
+     margin-bottom: 6px;
+     width: max-content;
+     padding: 1px 3px;
+     height: 30px;
+     background-color: #23b523;
+     color: rgb(255, 255, 255);
+     border-radius: 20%;
+
+ }

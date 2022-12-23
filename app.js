@@ -7,6 +7,8 @@ const express = require('express'),
 // Kontrolcü Gereksinimleri
 const pageControllers = require('./Controllers/pageControllers')
 const authControllers = require ('./Controllers/authControllers')
+const HareketController = require('./Controllers/hareketController')
+
 
 //Middleares gereksinimleri
 const ServerConnectionsMiddlewares = require('./Middlewares/ServerConnectionsMiddlewares')
@@ -26,7 +28,8 @@ app.use(
       secret: 'keyboard cat',
       resave: false,
       saveUninitialized: true,
-      store: MongoStore.create({ mongoUrl: 'mongodb+srv://admin:Ac123321.@cluster0.rvtg8fq.mongodb.net/misfitSessions?retryWrites=true&w=majority' }),
+      store: MongoStore.create({ mongoUrl: 'mongodb+srv://admin:Ac123321.@cluster0.rvtg8fq.mongodb.net/misfitSessions?retryWrites=true&w=majority',
+    }),
     })
   );
   app.use('*', (req, res, next) => {
@@ -37,6 +40,7 @@ app.use(
   //CONTROLLERS
   app.use(pageControllers)
   app.use(authControllers)
+  app.use(HareketController)
   
   
   // Server Setting

@@ -11,19 +11,24 @@ router.get('/', async (req,res) => {
     res.render('./home/index', {user, pageName})
 })
 
-router.get('/about', (req,res) => {
+router.get('/about', async (req,res) => {
     const pageName = req.url
-    res.render('./about/about', {pageName})
+    const user = await User.findById(req.session.userID)
+    res.render('./about/about', {pageName,user})
 })
 
-router.get('/trainer', (req,res) => {
+router.get('/trainer', async (req,res) => {
     const pageName = req.url
-    res.render('./trainer/trainer',{pageName})
+    const user = await User.findById(req.session.userID)
+    const trainers = await User.find({role:'trainer'})
+    console.log(trainers)
+    res.render('./trainer/trainer',{pageName,user,trainers})
 })
 
-router.get('/gallery', (req,res) => {
+router.get('/gallery', async (req,res) => {
     const pageName = req.url
-    res.render('./gallery/gallery',{pageName})
+    const user = await User.findById(req.session.userID)
+    res.render('./gallery/gallery',{pageName,user})
 })
 
 router.get('/contact', (req,res) => {
@@ -41,6 +46,13 @@ router.get('/signup', (req,res) => {
 
 router.get('/login', (req,res) => {
     res.render('./login/login')
+})
+
+router.get('/dashboard', async (req,res) => {
+    const pageName = req.url
+    const AllUser = await User.find()
+    const user = await User.findById(req.session.userID)
+    res.render('dashboard/dashboard', {pageName,user, AllUser})
 })
 
 module.exports = router

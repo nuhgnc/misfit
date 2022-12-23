@@ -1,0 +1,65 @@
+<div class="back_re">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="title">
+             <h2>Admin Page</h2>
+             <h3 style="color: whitesmoke; padding-bottom: 20px ;"><%- user.role %></h3>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- trainers -->
+
+<div class="admin-table">
+  <table class="table category table-sm table-hover">
+     <button class="trainer_ekle_btn">Eğitmen Ekle</button>
+    <span style="font-weight:bold ;">Eğitmenler</span>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">AD</th>
+          <th scope="col">SOYAD</th>
+          <th scope="col">DERS SAYISI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div class="category_table">
+  <table class="table category table-sm table-hover">
+    <button class="kategori_ekle_btn">Kategori Ekle</button>
+     <thead>
+       <tr>
+         <th scope="col">ID</th>
+         <th scope="col">Kategori Adı</th>
+         <th scope="col">DERS SAYISI</th>
+       </tr>
+     </thead>
+     <tbody>
+      <% Alluser.forEach(user => { %>
+        <tr>
+          <th scope="row"><%- user.name  %> </th>
+          <td>Mark</td>
+          <td>Otto</td>
+        </tr>
+      <% }) %>
+       
+     </tbody>
+   </table>
+</div>
